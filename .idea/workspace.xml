@@ -10,14 +10,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="" />
+    <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/PaisResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PaisDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/BolsasPuntosEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Cabeceras.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Clientes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ConceptosUsosPuntos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Contactos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Detalles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Json.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Pais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ReglasAsignacionesPuntos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/TiposDocumentos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/VencimientosPuntos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prueba/prueba/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/prueba/prueba/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tpBack-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpBack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tpBack.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,15 +70,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/web-backend-proy/programacion-web-backend",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;5e8d4b65-b815-4a2f-8b67-fb326675a164&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ProyectosLuna/wildfacu/wildfly-18.0.1.Final/standalone/deployments&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15722656&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.40603247&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\web-backend-proy\programacion-web-backend" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="model" />
+      <recent name="" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,7 +107,12 @@
       <option name="presentableId" value="Default" />
       <updated>1679251650158</updated>
       <workItem from="1679251651679" duration="683000" />
-      <workItem from="1679252534146" duration="335000" />
+      <workItem from="1679252534146" duration="1100000" />
+      <workItem from="1679253787919" duration="224000" />
+      <workItem from="1679254029445" duration="9458000" />
+      <workItem from="1679610843531" duration="635000" />
+      <workItem from="1679685163139" duration="595000" />
+      <workItem from="1680149012357" duration="3793000" />
     </task>
     <servers />
   </component>
@@ -63,5 +129,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
