@@ -10,31 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/BolsaPuntosRangoRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/BolsaPuntosRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ClienteRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ConceptoUsoPuntosRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/PersonaRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ReglaAsignacionRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/VencimientoPuntosRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BolsaPuntos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/Cabecera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ConceptoUsoPuntos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/Detalle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DetalleBolsaPuntosManyToMany.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ReglaAsignacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/UsoPuntos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/VencimientoPuntos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpBack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tpBack.iml" afterDir="false" />
-    </list>
+    <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="Prueba_Bolsa" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,8 +94,16 @@
       <updated>1679251650158</updated>
       <workItem from="1679251651679" duration="683000" />
       <workItem from="1679252534146" duration="335000" />
-      <workItem from="1680226479200" duration="566000" />
+      <workItem from="1680226479200" duration="921000" />
     </task>
+    <task id="LOCAL-00001" summary="Prueba_Bolsa">
+      <created>1680227262603</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680227262603</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,11 +120,26 @@
                   <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="developer2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Prueba_Bolsa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prueba_Bolsa" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
