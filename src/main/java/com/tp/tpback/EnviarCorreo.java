@@ -101,7 +101,7 @@ public class EnviarCorreo {
         System.out.println(texto_html);
 
         // Recipient's email ID needs to be mentioned.
-        String from = "jesuscaceres2020@gmail.com";
+        String from = "pruebaback23@gmail.com";
 
         // Sender's email ID needs to be mentioned
         String to = cliente.getEmail();
@@ -121,7 +121,7 @@ public class EnviarCorreo {
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("jesuscaceres2020@gmail.com", "axopynraluusmppp");
+                return new PasswordAuthentication("pruebaback23@gmail.com", "botscvmqtpgytmen");
             }
         });
 

@@ -11,36 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/notificacion.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ClienteResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ConceptoUsoResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/EnviarCorreo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/PlantillasHTML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ReglaAsignacionPuntoResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/VencimientoPuntoResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BolsaPuntoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CabeceraDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ConceptoUsoPuntosDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DetalleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ReglaAsignacionPuntoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TipoDocumentoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.jpb/persistence-units.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.jpb/persistence-units.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BolsasPuntosEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BolsaPunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cabeceras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cabecera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Clientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ConceptosUsosPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ConceptoUsoPuntos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Contactos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Detalles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Detalle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ReglasAsignacionesPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ReglaAsignacionPunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TiposDocumentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TipoDocumento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/VencimientosPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/VencimientoPunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpBack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tpBack.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/EnviarCorreo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/EnviarCorreo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +110,7 @@
       <workItem from="1679610843531" duration="635000" />
       <workItem from="1679685163139" duration="595000" />
       <workItem from="1680149012357" duration="3793000" />
-      <workItem from="1680314757167" duration="12128000" />
+      <workItem from="1680314757167" duration="13302000" />
     </task>
     <servers />
   </component>
