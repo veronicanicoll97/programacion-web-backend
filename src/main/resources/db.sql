@@ -25,14 +25,6 @@ CREATE TABLE conceptos_usos_puntos (
 );
 
 
-CREATE TABLE contactos (
-                           id_contacto SERIAL NOT NULL,
-                           tipo_contacto VARCHAR NOT NULL,
-                           valor VARCHAR NOT NULL,
-                           CONSTRAINT contactos_pk PRIMARY KEY (id_contacto)
-);
-
-
 CREATE TABLE pais (
                       id_pais SERIAL NOT NULL,
                       descripcion VARCHAR NOT NULL,
@@ -56,12 +48,13 @@ CREATE TABLE clientes (
                           id_tipo_documento INTEGER NOT NULL,
                           id_pais INTEGER NOT NULL,
                           fecha_nacimiento DATE NOT NULL,
-                          id_contacto INTEGER NOT NULL,
+                          telefono VARCHAR NOT NULL,
+                          email VARCHAR NOT NULL,
                           CONSTRAINT clientes_pk PRIMARY KEY (id_cliente)
 );
 
 
-CREATE TABLE cabeceras (
+CREATE TABLE cabecera (
                            id_cabecera SERIAL NOT NULL,
                            id_cliente INTEGER NOT NULL,
                            puntaje_utilizado INTEGER DEFAULT 0 NOT NULL,
@@ -84,7 +77,7 @@ CREATE TABLE bolsas_puntos (
 );
 
 
-CREATE TABLE detalles (
+CREATE TABLE detalle (
                           id_detalle SERIAL NOT NULL,
                           id_cabecera INTEGER NOT NULL,
                           puntaje_utilizado INTEGER DEFAULT 0 NOT NULL,
@@ -93,7 +86,7 @@ CREATE TABLE detalles (
 );
 
 
-ALTER TABLE cabeceras ADD CONSTRAINT conceptos_usos_puntos_cabeceras_fk
+ALTER TABLE cabecera ADD CONSTRAINT conceptos_usos_puntos_cabeceras_fk
     FOREIGN KEY (id_concepto)
         REFERENCES conceptos_usos_puntos (id_concepto)
         ON DELETE NO ACTION
@@ -128,23 +121,25 @@ ALTER TABLE bolsas_puntos ADD CONSTRAINT clientes_bolsas_puntos_fk
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
 
-ALTER TABLE cabeceras ADD CONSTRAINT clientes_cabeceras_fk
+ALTER TABLE cabecera ADD CONSTRAINT clientes_cabeceras_fk
     FOREIGN KEY (id_cliente)
         REFERENCES clientes (id_cliente)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
 
-ALTER TABLE detalles ADD CONSTRAINT cabeceras_detalles_fk
+ALTER TABLE detalle ADD CONSTRAINT cabeceras_detalles_fk
     FOREIGN KEY (id_cabecera)
-        REFERENCES cabeceras (id_cabecera)
+        REFERENCES cabecera (id_cabecera)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
 
-ALTER TABLE detalles ADD CONSTRAINT bolsas_puntos_detalles_fk
+ALTER TABLE detalle ADD CONSTRAINT bolsas_puntos_detalles_fk
     FOREIGN KEY (id_bolsa)
         REFERENCES bolsas_puntos (id_bolsa)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
+
+/*insert para test esta base de datos*/

@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "conceptos_usos_puntos", schema = "public", catalog = "programacion-web-backend")
-public class ConceptosUsosPuntos {
+@Table(name = "conceptos_usos_puntos", schema = "public", catalog = "backdb")
+public class ConceptoUsoPuntos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_concepto")
@@ -17,8 +17,8 @@ public class ConceptosUsosPuntos {
     @Basic
     @Column(name = "puntos_requeridos")
     private int puntosRequeridos;
-    @OneToMany(mappedBy = "conceptosUsosPuntosByIdConcepto")
-    private Collection<Cabeceras> cabecerasByIdConcepto;
+    @OneToMany(mappedBy = "conceptoUsoPuntosByIdConcepto")
+    private Collection<Cabecera> cabeceraByIdConcepto;
 
     public int getIdConcepto() {
         return idConcepto;
@@ -48,7 +48,7 @@ public class ConceptosUsosPuntos {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ConceptosUsosPuntos that = (ConceptosUsosPuntos) o;
+        ConceptoUsoPuntos that = (ConceptoUsoPuntos) o;
         return idConcepto == that.idConcepto && puntosRequeridos == that.puntosRequeridos && Objects.equals(descripcion, that.descripcion);
     }
 
@@ -57,11 +57,11 @@ public class ConceptosUsosPuntos {
         return Objects.hash(idConcepto, descripcion, puntosRequeridos);
     }
 
-    public Collection<Cabeceras> getCabecerasByIdConcepto() {
-        return cabecerasByIdConcepto;
+    public Collection<Cabecera> getCabecerasByIdConcepto() {
+        return cabeceraByIdConcepto;
     }
 
-    public void setCabecerasByIdConcepto(Collection<Cabeceras> cabecerasByIdConcepto) {
-        this.cabecerasByIdConcepto = cabecerasByIdConcepto;
+    public void setCabecerasByIdConcepto(Collection<Cabecera> cabeceraByIdConcepto) {
+        this.cabeceraByIdConcepto = cabeceraByIdConcepto;
     }
 }

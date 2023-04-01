@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tipos_documentos", schema = "public", catalog = "programacion-web-backend")
-public class TiposDocumentos {
+@Table(name = "tipos_documentos", schema = "public", catalog = "backdb")
+public class TipoDocumento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_tipo_documento")
@@ -14,8 +14,8 @@ public class TiposDocumentos {
     @Basic
     @Column(name = "descripcion")
     private String descripcion;
-    @OneToMany(mappedBy = "tiposDocumentosByIdTipoDocumento")
-    private Collection<Clientes> clientesByIdTipoDocumento;
+    @OneToMany(mappedBy = "tipoDocumentosByIdTipoDocumento")
+    private Collection<Cliente> clienteByIdTipoDocumento;
 
     public int getIdTipoDocumento() {
         return idTipoDocumento;
@@ -37,7 +37,7 @@ public class TiposDocumentos {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TiposDocumentos that = (TiposDocumentos) o;
+        TipoDocumento that = (TipoDocumento) o;
         return idTipoDocumento == that.idTipoDocumento && Objects.equals(descripcion, that.descripcion);
     }
 
@@ -46,11 +46,11 @@ public class TiposDocumentos {
         return Objects.hash(idTipoDocumento, descripcion);
     }
 
-    public Collection<Clientes> getClientesByIdTipoDocumento() {
-        return clientesByIdTipoDocumento;
+    public Collection<Cliente> getClientesByIdTipoDocumento() {
+        return clienteByIdTipoDocumento;
     }
 
-    public void setClientesByIdTipoDocumento(Collection<Clientes> clientesByIdTipoDocumento) {
-        this.clientesByIdTipoDocumento = clientesByIdTipoDocumento;
+    public void setClientesByIdTipoDocumento(Collection<Cliente> clienteByIdTipoDocumento) {
+        this.clienteByIdTipoDocumento = clienteByIdTipoDocumento;
     }
 }

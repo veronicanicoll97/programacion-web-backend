@@ -4,22 +4,21 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="pruebaPU">
-        <jta-data-source>java:jboss/datasources/programacion-web-backend</jta-data-source>
-        <class>model.BolsasPuntosEntity</class>
-        <class>model.Cabeceras</class>
-        <class>model.Clientes</class>
-        <class>model.ConceptosUsosPuntos</class>
-        <class>model.Contactos</class>
-        <class>model.Detalles</class>
+        <jta-data-source>java:jboss/datasources/backdb</jta-data-source>
+        <class>model.BolsaPunto</class>
+        <class>model.Cabecera</class>
+        <class>model.Cliente</class>
+        <class>model.ConceptoUsoPuntos</class>
+        <class>model.Detalle</class>
         <class>model.Pais</class>
-        <class>model.ReglasAsignacionesPuntos</class>
-        <class>model.TiposDocumentos</class>
-        <class>model.VencimientosPuntos</class>
+        <class>model.ReglaAsignacionPunto</class>
+        <class>model.TipoDocumento</class>
+        <class>model.VencimientoPunto</class>
         <properties>
             <property name="hibernate.id.new_generator_mappings" value="true"/>
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/programacion-web-backend"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/backdb"/>
             <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="eclipselink.jdbc.user" value="postgres"/>
             <property name="eclipselink.jdbc.password" value="postgres"/>

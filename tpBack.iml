@@ -17,7 +17,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
-          <factory-entry name="pruebaPU" value="5e8d4b65-b815-4a2f-8b67-fb326675a164" />
+          <factory-entry name="pruebaPU" value="9996f4b9-9fb4-4c91-bad8-990e0cf6e3f8" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
@@ -61,5 +61,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.14" level="project" />
     <orderEntry type="library" name="Maven: javax.json:javax.json-api:1.1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.2" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
   </component>
 </module>

@@ -11,27 +11,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/PaisResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PaisDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/BolsasPuntosEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Cabeceras.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Clientes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/ConceptosUsosPuntos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Contactos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Detalles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Json.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Pais.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/ReglasAsignacionesPuntos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/TiposDocumentos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/VencimientosPuntos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notificacion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ClienteResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ConceptoUsoResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/EnviarCorreo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/PlantillasHTML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ReglaAsignacionPuntoResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/VencimientoPuntoResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BolsaPuntoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CabeceraDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ConceptoUsoPuntosDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DetalleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ReglaAsignacionPuntoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TipoDocumentoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.jpb/persistence-units.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.jpb/persistence-units.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prueba/prueba/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/prueba/prueba/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/BolsasPuntosEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BolsaPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cabeceras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cabecera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Clientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ConceptosUsosPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ConceptoUsoPuntos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Contactos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Detalles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Detalle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ReglasAsignacionesPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ReglaAsignacionPunto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/TiposDocumentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TipoDocumento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/VencimientosPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/VencimientoPunto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tpBack-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpBack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tpBack.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,32 +78,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;5e8d4b65-b815-4a2f-8b67-fb326675a164&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ProyectosLuna/wildfacu/wildfly-18.0.1.Final/standalone/deployments&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15722656&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.40603247&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JPA.DatabaseSchemaImportDialog": "5e8d4b65-b815-4a2f-8b67-fb326675a164",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/web-backend-proy/programacion-web-backend/src/main/java/util",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.40603247",
+    "settings.editor.selected.configurable": "MavenSettings"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.tp.tpback" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\web-backend-proy\programacion-web-backend\src\main\java\util" />
       <recent name="D:\web-backend-proy\programacion-web-backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\web-backend-proy\programacion-web-backend" />
+      <recent name="D:\web-backend-proy\programacion-web-backend\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.tp.tpback" />
+      <recent name="util" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="model" />
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="util" />
+      <recent name="dao" />
+      <recent name="com.tp.tpback" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -113,6 +138,7 @@
       <workItem from="1679610843531" duration="635000" />
       <workItem from="1679685163139" duration="595000" />
       <workItem from="1680149012357" duration="3793000" />
+      <workItem from="1680314757167" duration="12128000" />
     </task>
     <servers />
   </component>

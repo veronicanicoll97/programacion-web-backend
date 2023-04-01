@@ -6,12 +6,12 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "bolsas_puntos", schema = "public", catalog = "programacion-web-backend")
-public class BolsasPuntosEntity {
+@Table(name = "bolsas_puntos", schema = "public", catalog = "backdb")
+public class BolsaPunto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_bolsa")
-    private double idBolsa;
+    private int idBolsa;
     @Basic
     @Column(name = "id_cliente")
     private int idCliente;
@@ -35,15 +35,15 @@ public class BolsasPuntosEntity {
     private double montoOperacion;
     @ManyToOne
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", nullable = false,  insertable = false, updatable = false)
-    private Clientes clientesByIdCliente;
+    private Cliente clienteByIdCliente;
     @OneToMany(mappedBy = "bolsasPuntosByIdBolsa")
-    private Collection<Detalles> detallesByIdBolsa;
+    private Collection<Detalle> detalleByIdBolsa;
 
-    public double getIdBolsa() {
+    public int getIdBolsa() {
         return idBolsa;
     }
 
-    public void setIdBolsa(double idBolsa) {
+    public void setIdBolsa(int idBolsa) {
         this.idBolsa = idBolsa;
     }
 
@@ -107,7 +107,7 @@ public class BolsasPuntosEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BolsasPuntosEntity that = (BolsasPuntosEntity) o;
+        BolsaPunto that = (BolsaPunto) o;
         return Double.compare(that.idBolsa, idBolsa) == 0 && idCliente == that.idCliente && puntajeAsignado == that.puntajeAsignado && puntajeUtilizado == that.puntajeUtilizado && saldoPuntos == that.saldoPuntos && Double.compare(that.montoOperacion, montoOperacion) == 0 && Objects.equals(fechaAsignacionPunto, that.fechaAsignacionPunto) && Objects.equals(fechaCaducidadPunto, that.fechaCaducidadPunto);
     }
 
@@ -116,19 +116,19 @@ public class BolsasPuntosEntity {
         return Objects.hash(idBolsa, idCliente, fechaAsignacionPunto, fechaCaducidadPunto, puntajeAsignado, puntajeUtilizado, saldoPuntos, montoOperacion);
     }
 
-    public Clientes getClientesByIdCliente() {
-        return clientesByIdCliente;
+    public Cliente getClientesByIdCliente() {
+        return clienteByIdCliente;
     }
 
-    public void setClientesByIdCliente(Clientes clientesByIdCliente) {
-        this.clientesByIdCliente = clientesByIdCliente;
+    public void setClientesByIdCliente(Cliente clienteByIdCliente) {
+        this.clienteByIdCliente = clienteByIdCliente;
     }
 
-    public Collection<Detalles> getDetallesByIdBolsa() {
-        return detallesByIdBolsa;
+    public Collection<Detalle> getDetallesByIdBolsa() {
+        return detalleByIdBolsa;
     }
 
-    public void setDetallesByIdBolsa(Collection<Detalles> detallesByIdBolsa) {
-        this.detallesByIdBolsa = detallesByIdBolsa;
+    public void setDetallesByIdBolsa(Collection<Detalle> detalleByIdBolsa) {
+        this.detalleByIdBolsa = detalleByIdBolsa;
     }
 }

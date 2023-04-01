@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "reglas_asignaciones_puntos", schema = "public", catalog = "programacion-web-backend")
-public class ReglasAsignacionesPuntos {
+@Table(name = "reglas_asignaciones_puntos", schema = "public", catalog = "backdb")
+public class ReglaAsignacionPunto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_asignacion")
@@ -56,7 +56,7 @@ public class ReglasAsignacionesPuntos {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ReglasAsignacionesPuntos that = (ReglasAsignacionesPuntos) o;
+        ReglaAsignacionPunto that = (ReglaAsignacionPunto) o;
         return idAsignacion == that.idAsignacion && Double.compare(that.limiteInferior, limiteInferior) == 0 && Double.compare(that.limiteSuperior, limiteSuperior) == 0 && montoEquivalenciaPunto == that.montoEquivalenciaPunto;
     }
 

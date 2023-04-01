@@ -5,12 +5,12 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "vencimientos_puntos", schema = "public", catalog = "programacion-web-backend")
-public class VencimientosPuntos {
+@Table(name = "vencimientos_puntos", schema = "public", catalog = "backdb")
+public class VencimientoPunto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_vencimiento")
-    private String idVencimiento;
+    private int idVencimiento;
     @Basic
     @Column(name = "fecha_inicio")
     private Date fechaInicio;
@@ -21,11 +21,11 @@ public class VencimientosPuntos {
     @Column(name = "dias_duracion")
     private int diasDuracion;
 
-    public String getIdVencimiento() {
+    public int getIdVencimiento() {
         return idVencimiento;
     }
 
-    public void setIdVencimiento(String idVencimiento) {
+    public void setIdVencimiento(int idVencimiento) {
         this.idVencimiento = idVencimiento;
     }
 
@@ -57,7 +57,7 @@ public class VencimientosPuntos {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        VencimientosPuntos that = (VencimientosPuntos) o;
+        VencimientoPunto that = (VencimientoPunto) o;
         return diasDuracion == that.diasDuracion && Objects.equals(idVencimiento, that.idVencimiento) && Objects.equals(fechaInicio, that.fechaInicio) && Objects.equals(fechaFin, that.fechaFin);
     }
 

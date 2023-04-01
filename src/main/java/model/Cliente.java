@@ -6,7 +6,9 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Clientes {
+@Table(name = "clientes")
+public class Cliente {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_cliente")
@@ -17,6 +19,13 @@ public class Clientes {
     @Basic
     @Column(name = "apellido")
     private String apellido;
+
+    @Basic
+    @Column(name = "telefono")
+    private String telefono;
+    @Basic
+    @Column(name = "email")
+    private String email;
     @Basic
     @Column(name = "nro_documento")
     private String nroDocumento;
@@ -29,22 +38,16 @@ public class Clientes {
     @Basic
     @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
-    @Basic
-    @Column(name = "id_contacto")
-    private int idContacto;
-    @OneToMany(mappedBy = "clientesByIdCliente")
-    private Collection<BolsasPuntosEntity> bolsasPuntosByIdCliente;
-    @OneToMany(mappedBy = "clientesByIdCliente")
-    private Collection<Cabeceras> cabecerasByIdCliente;
+    @OneToMany(mappedBy = "clienteByIdCliente")
+    private Collection<BolsaPunto> bolsasPuntosByIdCliente;
+    @OneToMany(mappedBy = "clienteByIdCliente")
+    private Collection<Cabecera> cabeceraByIdCliente;
     @ManyToOne
     @JoinColumn(name = "id_tipo_documento", referencedColumnName = "id_tipo_documento", nullable = false,  insertable = false, updatable = false)
-    private TiposDocumentos tiposDocumentosByIdTipoDocumento;
+    private TipoDocumento tipoDocumentosByIdTipoDocumento;
     @ManyToOne
     @JoinColumn(name = "id_pais", referencedColumnName = "id_pais", nullable = false,  insertable = false, updatable = false)
     private Pais paisByIdPais;
-    @ManyToOne
-    @JoinColumn(name = "id_contacto", referencedColumnName = "id_contacto", nullable = false,  insertable = false, updatable = false)
-    private Contactos contactosByIdContacto;
 
     public int getIdCliente() {
         return idCliente;
@@ -102,49 +105,57 @@ public class Clientes {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getIdContacto() {
-        return idContacto;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setIdContacto(int idContacto) {
-        this.idContacto = idContacto;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Clientes clientes = (Clientes) o;
-        return idCliente == clientes.idCliente && idTipoDocumento == clientes.idTipoDocumento && idPais == clientes.idPais && idContacto == clientes.idContacto && Objects.equals(nombre, clientes.nombre) && Objects.equals(apellido, clientes.apellido) && Objects.equals(nroDocumento, clientes.nroDocumento) && Objects.equals(fechaNacimiento, clientes.fechaNacimiento);
+        Cliente cliente = (Cliente) o;
+        return idCliente == cliente.idCliente && idTipoDocumento == cliente.idTipoDocumento && idPais == cliente.idPais && telefono.equals(cliente.telefono) && email.equals(cliente.email) && Objects.equals(nombre, cliente.nombre) && Objects.equals(apellido, cliente.apellido) && Objects.equals(nroDocumento, cliente.nroDocumento) && Objects.equals(fechaNacimiento, cliente.fechaNacimiento);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idCliente, nombre, apellido, nroDocumento, idTipoDocumento, idPais, fechaNacimiento, idContacto);
+        return Objects.hash(idCliente, nombre, apellido, nroDocumento, idTipoDocumento, idPais, fechaNacimiento, telefono, email);
     }
 
-    public Collection<BolsasPuntosEntity> getBolsasPuntosByIdCliente() {
+    public Collection<BolsaPunto> getBolsasPuntosByIdCliente() {
         return bolsasPuntosByIdCliente;
     }
 
-    public void setBolsasPuntosByIdCliente(Collection<BolsasPuntosEntity> bolsasPuntosByIdCliente) {
+    public void setBolsasPuntosByIdCliente(Collection<BolsaPunto> bolsasPuntosByIdCliente) {
         this.bolsasPuntosByIdCliente = bolsasPuntosByIdCliente;
     }
 
-    public Collection<Cabeceras> getCabecerasByIdCliente() {
-        return cabecerasByIdCliente;
+    public Collection<Cabecera> getCabecerasByIdCliente() {
+        return cabeceraByIdCliente;
     }
 
-    public void setCabecerasByIdCliente(Collection<Cabeceras> cabecerasByIdCliente) {
-        this.cabecerasByIdCliente = cabecerasByIdCliente;
+    public void setCabecerasByIdCliente(Collection<Cabecera> cabeceraByIdCliente) {
+        this.cabeceraByIdCliente = cabeceraByIdCliente;
     }
 
-    public TiposDocumentos getTiposDocumentosByIdTipoDocumento() {
-        return tiposDocumentosByIdTipoDocumento;
+    public TipoDocumento getTiposDocumentosByIdTipoDocumento() {
+        return tipoDocumentosByIdTipoDocumento;
     }
 
-    public void setTiposDocumentosByIdTipoDocumento(TiposDocumentos tiposDocumentosByIdTipoDocumento) {
-        this.tiposDocumentosByIdTipoDocumento = tiposDocumentosByIdTipoDocumento;
+    public void setTiposDocumentosByIdTipoDocumento(TipoDocumento tipoDocumentosByIdTipoDocumento) {
+        this.tipoDocumentosByIdTipoDocumento = tipoDocumentosByIdTipoDocumento;
     }
 
     public Pais getPaisByIdPais() {
@@ -155,11 +166,5 @@ public class Clientes {
         this.paisByIdPais = paisByIdPais;
     }
 
-    public Contactos getContactosByIdContacto() {
-        return contactosByIdContacto;
-    }
 
-    public void setContactosByIdContacto(Contactos contactosByIdContacto) {
-        this.contactosByIdContacto = contactosByIdContacto;
-    }
 }

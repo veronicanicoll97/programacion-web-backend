@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PersistenceUnitSettings">
     <persistence-units>
-      <persistence-unit name="programacion-web-backend" persistenceXmlPath="src/main/resources/META-INF/persistence.xml" />
+      <persistence-unit name="backdb" persistenceXmlPath="src/main/resources/META-INF/persistence.xml" />
     </persistence-units>
   </component>
 </project>
