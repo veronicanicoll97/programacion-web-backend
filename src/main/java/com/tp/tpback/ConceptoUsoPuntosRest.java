@@ -1,7 +1,5 @@
 package com.tp.tpback;
 
-import py.com.progweb.prueba.ejb.ConceptoUsoPuntosDAO;
-import py.com.progweb.prueba.model.ConceptoUsoPuntos;
 
 import javax.ejb.EJBTransactionRolledbackException;
 import javax.inject.Inject;
@@ -16,19 +14,19 @@ import java.text.ParseException;
 public class ConceptoUsoPuntosRest {
 
     @Inject
-    private ConceptoUsoPuntosDAO puntosDAO;
+    private ConceptoUsoPuntos puntos;
 
     @GET
     @Path("/")
     public Response listar() {
-        return Response.ok(puntosDAO.lista()).build();
+        return Response.ok(puntos.lista()).build();
     }
 
     @POST
     @Path("/")
     public Response crear(ConceptoUsoPuntos p) {
         try{
-            this.puntosDAO.agregar(p);
+            this.puntos.agregar(p);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -50,7 +48,7 @@ public class ConceptoUsoPuntosRest {
     @Path("/{id}")
     public Response update(ConceptoUsoPuntos c, @PathParam("id") int id) {
         try{
-            this.puntosDAO.update(c, id);
+            this.puntos.update(c, id);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -73,7 +71,7 @@ public class ConceptoUsoPuntosRest {
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") int id){
-        this.puntosDAO.delete(id);
+        this.puntos.delete(id);
         return Response.ok().build();
     }
 

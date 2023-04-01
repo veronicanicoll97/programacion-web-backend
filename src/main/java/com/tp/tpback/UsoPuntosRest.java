@@ -18,13 +18,14 @@ import java.sql.SQLException;
 public class UsoPuntosRest {
 
     @Inject
-    private UsoPuntosDAO usoPuntosDAO;
+    private UsoPuntos usoPuntos;
+    private Object usoPuntos;
 
     @POST
     @Path("/")
     public Response usarPuntos(UsoPuntos u) {
         try {
-            this.usoPuntosDAO.agregar(u);
+            this.usoPuntos.agregar(u);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();

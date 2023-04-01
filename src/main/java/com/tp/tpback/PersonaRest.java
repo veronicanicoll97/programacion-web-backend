@@ -1,7 +1,5 @@
 package com.tp.tpback;
 
-import py.com.progweb.prueba.ejb.PersonaDAO;
-import py.com.progweb.prueba.model.Persona;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -13,18 +11,18 @@ import javax.ws.rs.core.Response;
 public class PersonaRest {
 	
 	@Inject
-	private PersonaDAO personaDAO;
+	private Persona persona;
 	
 	@GET
 	@Path("/")
 	public Response listar() {
-		return Response.ok(personaDAO.lista()).build();
+		return Response.ok(persona.lista()).build();
 	}
 	
 	@POST
 	@Path("/")
 	public Response crear(Persona p) {
-		this.personaDAO.agregar(p);
+		this.persona.agregar(p);
 		return Response.ok().build();
 	}
 

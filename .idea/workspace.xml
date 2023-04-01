@@ -10,7 +10,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="Prueba_Bolsa" />
+    <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="Prueba_Bolsa2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/BolsaPuntos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ReglaAsignacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ReglaAsignacionPunto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/VencimientoPuntos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/BolsaPuntosRangoRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/BolsaPuntosRangoRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/BolsaPuntosRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/BolsaPuntosRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ClienteRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ClienteRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ConceptoUsoPuntosRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ConceptoUsoPuntosRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/PersonaRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/PersonaRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ReglaAsignacionRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ReglaAsignacionRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/VencimientoPuntosRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/VencimientoPuntosRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BolsaPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BolsaPuntosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Cabecera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Cabecera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ConceptoUsoPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConceptoUsoPuntosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Detalle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DetalleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DetalleBolsaPuntosManyToMany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DetalleBolsaPuntosManyToMany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ReglaAsignacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ReglaAsignacionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UsoPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UsoPuntosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/VencimientoPuntos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/VencimientoPuntosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpBack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tpBack.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +47,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -47,7 +76,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NFEu2cIja1kwdIFwH3dg02RQV5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -66,11 +95,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.tp.tpback" />
       <recent name="dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -94,7 +125,8 @@
       <updated>1679251650158</updated>
       <workItem from="1679251651679" duration="683000" />
       <workItem from="1679252534146" duration="335000" />
-      <workItem from="1680226479200" duration="921000" />
+      <workItem from="1680226479200" duration="1231000" />
+      <workItem from="1680306271620" duration="4021000" />
     </task>
     <task id="LOCAL-00001" summary="Prueba_Bolsa">
       <created>1680227262603</created>
@@ -103,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680227262603</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Prueba_Bolsa2">
+      <created>1680227453019</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680227453019</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +178,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Prueba_Bolsa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prueba_Bolsa" />
+    <MESSAGE value="Prueba_Bolsa2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prueba_Bolsa2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

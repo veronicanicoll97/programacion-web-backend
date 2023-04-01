@@ -1,6 +1,5 @@
 package dao;
 
-import py.com.progweb.prueba.model.Cabecera;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

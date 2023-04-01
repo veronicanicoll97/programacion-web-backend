@@ -1,7 +1,5 @@
 package com.tp.tpback;
 
-import py.com.progweb.prueba.ejb.ReglaAsignacionDAO;
-import py.com.progweb.prueba.model.ReglaAsignacionPunto;
 
 import javax.ejb.EJBTransactionRolledbackException;
 import javax.inject.Inject;
@@ -15,7 +13,8 @@ import java.sql.SQLException;
 public class ReglaAsignacionRest {
 
     @Inject
-    private ReglaAsignacionDAO reglaAsigacionDAO;
+    private ReglaAsignacion reglaAsigacionDAO;
+    private BolsaPuntos reglaAsigacion;
 
     @GET
     @Path("/")
@@ -28,7 +27,7 @@ public class ReglaAsignacionRest {
     public Response crear(ReglaAsignacionPunto p) {
 
         try{
-            this.reglaAsigacionDAO.agregar(p);
+            this.reglaAsigacion.agregar(p);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();

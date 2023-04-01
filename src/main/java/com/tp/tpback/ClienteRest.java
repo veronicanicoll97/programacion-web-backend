@@ -8,7 +8,12 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
-import java.text.ParseException;
+package com.tp.tpback;
+import javax.ejb.EJBTransactionRolledbackException;
+import javax.inject.Inject;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
+import java.sql.SQLException;
 
 @Path("cliente")
 @Consumes("application/json")
@@ -16,19 +21,19 @@ import java.text.ParseException;
 public class ClienteRest {
 
     @Inject
-    private ClienteDAO personaDAO;
+    private Cliente persona;
 
     @GET
     @Path("/")
     public Response listar() {
-        return Response.ok(personaDAO.lista()).build();
+        return Response.ok(persona.lista()).build();
     }
 
     @POST
     @Path("/")
     public Response crear(Cliente p) {
-    	try{
-            this.personaDAO.agregar(p);
+        try{
+            this.persona.agregar(p);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -55,7 +60,7 @@ public class ClienteRest {
     @Path("/{id}")
     public Response update(Cliente c, @PathParam("id") String id) {
         try{
-            this.personaDAO.update(c, Integer.parseInt(id));
+            this.persona.update(c, Integer.parseInt(id));
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -83,7 +88,7 @@ public class ClienteRest {
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") int id){
-        this.personaDAO.delete(id);
+        this.persona.delete(id);
         return Response.ok().build();
     }
 

@@ -8,14 +8,14 @@ import java.text.SimpleDateFormat;
 @Entity
 @Table(name="bolsa_puntos")
 
-public class BolsaPuntos {
+public class BolsaPuntosDAO {
 
     //Column: como se llama la columna en la base de datos
     //Basic: algunas restricciones o temas a tener en cuenta
 
     // primary key
     @Id
-    @Column(name="id_bolsa_puntos")
+    @Column(name="id_bolsa")
     @Basic(optional = false)
     @GeneratedValue(generator = "bolsaPuntosSec", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "bolsaPuntosSec", sequenceName = "sec_bolsa_puntos", allocationSize = 0)
@@ -28,24 +28,24 @@ public class BolsaPuntos {
 
 
     // fecha de asignacion de los puntos
-    @Column(name="fecha_asignacion")
+    @Column(name="fecha_asignacion_punto")
     @Basic(optional = false)
-    private Date fecha_asignacion;
+    private Date fecha_asignacion_punto;
 
     // fecha de vencimiento de los puntos asignados
-    @Column(name="fecha_caducidad")
+    @Column(name="fecha_caducidad_punto")
     @Basic(optional = false)
-    private Date fecha_caducidad;
+    private Date fecha_caducidad_punto;
 
     // total de puntos asignados por operacion
-    @Column(name="puntos_totales")
+    @Column(name="puntaje_asignado")
     @Basic(optional = false)
-    private Integer puntos_totales;
+    private Integer puntaje_asignado;
 
     // total de puntos que ya ha utilizado
-    @Column(name="puntos_utilizados")
+    @Column(name="puntaje_utilizado")
     @Basic(optional = false)
-    private Integer puntos_utilizados;
+    private Integer puntaje_utilizado;
 
     // total - utilizado
     @Column(name="saldo_puntos")
@@ -58,7 +58,7 @@ public class BolsaPuntos {
     private Integer monto_operacion;
 
     //constructor sin parámetros
-    public BolsaPuntos(){
+    public BolsaPuntosDAO(){
 
     }
 
@@ -82,38 +82,38 @@ public class BolsaPuntos {
 
     public String getFecha_asignacion() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String strDate = dateFormat.format(fecha_asignacion);
+        String strDate = dateFormat.format(fecha_asignacion_punto);
         return strDate;
     }
 
     public void setFecha_asignacion(Date fecha_asignacion) {
-        this.fecha_asignacion = fecha_asignacion;
+        this.fecha_asignacion_punto = fecha_asignacion_punto;
     }
 
     public String getFecha_caducidad() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String strDate = dateFormat.format(fecha_caducidad);
+        String strDate = dateFormat.format(fecha_caducidad_punto);
         return strDate;
     }
 
     public void setFecha_caducidad(Date fecha_caducidad) {
-        this.fecha_caducidad = fecha_caducidad;
+        this.fecha_caducidad_punto = fecha_caducidad_punto;
     }
 
     public Integer getPuntos_totales() {
-        return puntos_totales;
+        return puntaje_asignado;
     }
 
     public void setPuntos_totales(Integer puntos_totales) {
-        this.puntos_totales = puntos_totales;
+        this.puntaje_asignado= puntaje_asignado;
     }
 
     public Integer getPuntos_utilizados() {
-        return puntos_utilizados;
+        return puntaje_utilizado;
     }
 
     public void setPuntos_utilizados(Integer puntos_utilizados) {
-        this.puntos_utilizados = puntos_utilizados;
+        this.puntaje_utilizado = puntaje_utilizado;
     }
 
     public Integer getSaldo_puntos() {
@@ -132,4 +132,7 @@ public class BolsaPuntos {
         this.monto_operacion = monto_operacion;
     }
 
+    public Object listaCliente(Integer idCliente) {
+        return null;
+    }
 }

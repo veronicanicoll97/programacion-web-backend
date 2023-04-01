@@ -1,7 +1,6 @@
 package com.tp.tpback;
 
-import py.com.progweb.prueba.ejb.VencimientoPuntosDAO;
-import py.com.progweb.prueba.model.VencimientoPuntos;
+
 
 import javax.ejb.EJBTransactionRolledbackException;
 import javax.inject.Inject;
@@ -16,19 +15,20 @@ import java.text.ParseException;
 public class VencimientoPuntosRest {
 
     @Inject
-    private VencimientoPuntosDAO vencimientoPuntosDAO;
+    private VencimientoPuntos vencimientoPuntos;
+    private Object vencimientoPuntos;
 
     @GET
     @Path("/")
     public Response listar() {
-        return Response.ok(vencimientoPuntosDAO.lista()).build();
+        return Response.ok(vencimientoPuntos.lista()).build();
     }
 
     @POST
     @Path("/")
     public Response crear(VencimientoPuntos p) {
         try{
-            this.vencimientoPuntosDAO.agregar(p);
+            this.vencimientoPuntos.agregar(p);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException | ParseException e){
             Throwable t = e.getCause();
@@ -52,7 +52,7 @@ public class VencimientoPuntosRest {
     @Path("/{id}")
     public Response update(VencimientoPuntos c, @PathParam("id") int id) {
         try{
-            this.vencimientoPuntosDAO.update(c, id);
+            this.vencimientoPuntos.update(c, id);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -75,7 +75,7 @@ public class VencimientoPuntosRest {
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") int id){
-        this.vencimientoPuntosDAO.delete(id);
+        this.vencimientoPuntos.delete(id);
         return Response.ok().build();
     }
 

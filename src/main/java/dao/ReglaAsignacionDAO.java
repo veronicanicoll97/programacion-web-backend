@@ -11,7 +11,7 @@ import java.text.ParseException;
 import java.util.List;
 
 @Stateless
-public class ReglaAsignacion {
+public class ReglaAsignacionDAO {
 
     @PersistenceContext(unitName = "pruebaPU")
     private EntityManager em;

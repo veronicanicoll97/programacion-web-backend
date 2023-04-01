@@ -13,12 +13,12 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Stateless
-public class VencimientoPuntos {
+public class VencimientoPuntosDAO {
 
     @PersistenceContext(unitName = "pruebaPU")
     private EntityManager em;
 
-    public void agregar(VencimientoPuntos entidad) throws ParseException, QueryException {
+    public void agregar(VencimientoPuntosDAO entidad) throws ParseException, QueryException {
 
         // Format para pasar de String a date
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -28,21 +28,21 @@ public class VencimientoPuntos {
         Query q = this.em.createQuery("select c from VencimientoPuntos c WHERE c.fechaInicio<= ?1 AND c.fechaFin >= ?2");
         q.setParameter(1, fechaInicio);
         q.setParameter(2, fechaInicio);
-        List<VencimientoPuntos> coincidencias = (List<VencimientoPuntos>)q.getResultList();
+        List<VencimientoPuntosDAO> coincidencias = (List<VencimientoPuntosDAO>)q.getResultList();
         if(!coincidencias.isEmpty())
             throw new QueryException("Fecha de inicio en conflicto con fecha de vencimiento Nro " + coincidencias.get(0).getIdVencimiento());
 
         q = this.em.createQuery("select c from VencimientoPuntos c WHERE c.fechaInicio<= ?1 AND c.fechaFin >= ?2");
         q.setParameter(1, fechaFin);
         q.setParameter(2, fechaFin);
-        coincidencias = (List<VencimientoPuntos>)q.getResultList();
+        coincidencias = (List<VencimientoPuntosDAO>)q.getResultList();
         if(!coincidencias.isEmpty())
             throw new QueryException("Fecha de fin en conflicto con fecha de vencimiento Nro " + coincidencias.get(0).getIdVencimiento());
 
         q = this.em.createQuery("select c from VencimientoPuntos c WHERE c.fechaInicio>= ?1 AND c.fechaFin <= ?2");
         q.setParameter(1, fechaInicio);
         q.setParameter(2, fechaFin);
-        coincidencias = (List<VencimientoPuntos>)q.getResultList();
+        coincidencias = (List<VencimientoPuntosDAO>)q.getResultList();
         if(!coincidencias.isEmpty())
             throw new QueryException("Fecha en conflicto con fecha de vencimiento Nro " + coincidencias.get(0).getIdVencimiento());
 
@@ -52,13 +52,13 @@ public class VencimientoPuntos {
 
     }
 
-    public List<VencimientoPuntos> lista() {
+    public List<VencimientoPuntosDAO> lista() {
         Query q = this.em.createQuery("select c from VencimientoPuntos c");
 
-        return (List<VencimientoPuntos>)q.getResultList();
+        return (List<VencimientoPuntosDAO>)q.getResultList();
     }
 
-    public void update(VencimientoPuntos entidad, int id) throws ParseException {
+    public void update(VencimientoPuntosDAO entidad, int id) throws ParseException {
         // Format para pasar de String a date
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -69,7 +69,7 @@ public class VencimientoPuntos {
         q.setParameter(1, fechaInicio);
         q.setParameter(2, fechaInicio);
         q.setParameter(3, id);
-        List<VencimientoPuntos> coincidencias = (List<VencimientoPuntos>)q.getResultList();
+        List<VencimientoPuntosDAO> coincidencias = (List<VencimientoPuntosDAO>)q.getResultList();
         if(!coincidencias.isEmpty())
             throw new QueryException("Fecha de inicio en conflicto con fecha de vencimiento Nro " + coincidencias.get(0).getIdVencimiento());
 
@@ -77,7 +77,7 @@ public class VencimientoPuntos {
         q.setParameter(1, fechaFin);
         q.setParameter(2, fechaFin);
         q.setParameter(3, id);
-        coincidencias = (List<VencimientoPuntos>)q.getResultList();
+        coincidencias = (List<VencimientoPuntosDAO>)q.getResultList();
         if(!coincidencias.isEmpty())
             throw new QueryException("Fecha de fin en conflicto con fecha de vencimiento Nro " + coincidencias.get(0).getIdVencimiento());
 
@@ -85,11 +85,11 @@ public class VencimientoPuntos {
         q.setParameter(1, fechaInicio);
         q.setParameter(2, fechaFin);
         q.setParameter(3, id);
-        coincidencias = (List<VencimientoPuntos>)q.getResultList();
+        coincidencias = (List<VencimientoPuntosDAO>)q.getResultList();
         if(!coincidencias.isEmpty())
             throw new QueryException("Fecha en conflicto con fecha de vencimiento Nro " + coincidencias.get(0).getIdVencimiento());
 
-        VencimientoPuntos e = this.em.find(VencimientoPuntos.class, id);
+        VencimientoPuntosDAO e = this.em.find(VencimientoPuntosDAO.class, id);
         e.setFechaInicio(new Date(format.parse(entidad.getFechaInicio()).getTime()));
         e.setFechaFin(new Date(format.parse(entidad.getFechaFin()).getTime()));
         e.setDiasDuracion((int) ((format.parse(entidad.getFechaFin()).getTime()-format.parse(entidad.getFechaInicio()).getTime())/86400000) );
@@ -100,7 +100,7 @@ public class VencimientoPuntos {
 
     public void delete(int id){
 
-        VencimientoPuntos e = this.em.find(VencimientoPuntos.class, id);
+        VencimientoPuntosDAO e = this.em.find(VencimientoPuntosDAO.class, id);
 
         Query q = this.em.createQuery("DELETE from VencimientoPuntos c WHERE c.idVencimiento =" + id);
         q.executeUpdate();

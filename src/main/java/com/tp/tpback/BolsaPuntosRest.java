@@ -1,7 +1,6 @@
 package com.tp.tpback;
 
-import py.com.progweb.prueba.ejb.BolsaPuntosDAO;
-import py.com.progweb.prueba.model.BolsaPuntos;
+
 
 import javax.ejb.EJBTransactionRolledbackException;
 import javax.inject.Inject;
@@ -17,20 +16,20 @@ import java.text.ParseException;
 public class BolsaPuntosRest {
 
     @Inject
-    private BolsaPuntosDAO bolsapuntosDAO;
+    private BolsaPuntos bolsapuntos;
 
     @GET
     // persona/
     @Path("/")
     public Response listar(){
-        return Response.ok(bolsapuntosDAO.lista()).build();
+        return Response.ok(bolsapuntos.lista()).build();
     }
 
     @POST
     @Path("/")
     public Response crear(BolsaPuntos bp){
         try {
-            this.bolsapuntosDAO.agregar(bp);
+            this.bolsapuntos.agregar(bp);
             return Response.ok().build();
         } catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -71,7 +70,7 @@ public class BolsaPuntosRest {
     @Path("/{id}")
     public Response update(BolsaPuntos bp, @PathParam("id") String id) {
         try{
-            this.bolsapuntosDAO.update(bp, Integer.parseInt(id));
+            this.bolsapuntos.update(bp, Integer.parseInt(id));
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -104,8 +103,6 @@ public class BolsaPuntosRest {
                 }
 
             }
-        } catch (ParseException e) {
-            e.getMessage();
         }
 
         return Response.ok().build();
@@ -114,7 +111,7 @@ public class BolsaPuntosRest {
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") int id){
-        this.bolsapuntosDAO.delete(id);
+        this.bolsapuntos.delete(id);
         return Response.ok().build();
     }
 
