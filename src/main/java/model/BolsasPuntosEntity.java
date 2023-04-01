@@ -35,9 +35,9 @@ public class BolsasPuntosEntity {
     private double montoOperacion;
     @ManyToOne
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", nullable = false,  insertable = false, updatable = false)
-    private Clientes clientesByIdCliente;
+    private Cliente clienteByIdCliente;
     @OneToMany(mappedBy = "bolsasPuntosByIdBolsa")
-    private Collection<Detalles> detallesByIdBolsa;
+    private Collection<Detalle> detalleByIdBolsa;
 
     public double getIdBolsa() {
         return idBolsa;
@@ -116,19 +116,19 @@ public class BolsasPuntosEntity {
         return Objects.hash(idBolsa, idCliente, fechaAsignacionPunto, fechaCaducidadPunto, puntajeAsignado, puntajeUtilizado, saldoPuntos, montoOperacion);
     }
 
-    public Clientes getClientesByIdCliente() {
-        return clientesByIdCliente;
+    public Cliente getClientesByIdCliente() {
+        return clienteByIdCliente;
     }
 
-    public void setClientesByIdCliente(Clientes clientesByIdCliente) {
-        this.clientesByIdCliente = clientesByIdCliente;
+    public void setClientesByIdCliente(Cliente clienteByIdCliente) {
+        this.clienteByIdCliente = clienteByIdCliente;
     }
 
-    public Collection<Detalles> getDetallesByIdBolsa() {
-        return detallesByIdBolsa;
+    public Collection<Detalle> getDetallesByIdBolsa() {
+        return detalleByIdBolsa;
     }
 
-    public void setDetallesByIdBolsa(Collection<Detalles> detallesByIdBolsa) {
-        this.detallesByIdBolsa = detallesByIdBolsa;
+    public void setDetallesByIdBolsa(Collection<Detalle> detalleByIdBolsa) {
+        this.detalleByIdBolsa = detalleByIdBolsa;
     }
 }

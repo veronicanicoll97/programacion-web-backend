@@ -6,11 +6,11 @@
     <persistence-unit name="pruebaPU">
         <jta-data-source>java:jboss/datasources/programacion-web-backend</jta-data-source>
         <class>model.BolsasPuntosEntity</class>
-        <class>model.Cabeceras</class>
-        <class>model.Clientes</class>
+        <class>model.Cabecera</class>
+        <class>model.Cliente</class>
         <class>model.ConceptosUsosPuntos</class>
         <class>model.Contactos</class>
-        <class>model.Detalles</class>
+        <class>model.Detalle</class>
         <class>model.Pais</class>
         <class>model.ReglasAsignacionesPuntos</class>
         <class>model.TiposDocumentos</class>

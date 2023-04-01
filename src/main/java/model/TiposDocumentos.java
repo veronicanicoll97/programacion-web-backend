@@ -15,7 +15,7 @@ public class TiposDocumentos {
     @Column(name = "descripcion")
     private String descripcion;
     @OneToMany(mappedBy = "tiposDocumentosByIdTipoDocumento")
-    private Collection<Clientes> clientesByIdTipoDocumento;
+    private Collection<Cliente> clienteByIdTipoDocumento;
 
     public int getIdTipoDocumento() {
         return idTipoDocumento;
@@ -46,11 +46,11 @@ public class TiposDocumentos {
         return Objects.hash(idTipoDocumento, descripcion);
     }
 
-    public Collection<Clientes> getClientesByIdTipoDocumento() {
-        return clientesByIdTipoDocumento;
+    public Collection<Cliente> getClientesByIdTipoDocumento() {
+        return clienteByIdTipoDocumento;
     }
 
-    public void setClientesByIdTipoDocumento(Collection<Clientes> clientesByIdTipoDocumento) {
-        this.clientesByIdTipoDocumento = clientesByIdTipoDocumento;
+    public void setClientesByIdTipoDocumento(Collection<Cliente> clienteByIdTipoDocumento) {
+        this.clienteByIdTipoDocumento = clienteByIdTipoDocumento;
     }
 }

@@ -17,7 +17,7 @@ public class Pais {
     @Column(name = "nacionalidad")
     private String nacionalidad;
     @OneToMany(mappedBy = "paisByIdPais")
-    private Collection<Clientes> clientesByIdPais;
+    private Collection<Cliente> clienteByIdPais;
 
     public int getIdPais() {
         return idPais;
@@ -56,11 +56,11 @@ public class Pais {
         return Objects.hash(idPais, descripcion, nacionalidad);
     }
 
-    public Collection<Clientes> getClientesByIdPais() {
-        return clientesByIdPais;
+    public Collection<Cliente> getClientesByIdPais() {
+        return clienteByIdPais;
     }
 
-    public void setClientesByIdPais(Collection<Clientes> clientesByIdPais) {
-        this.clientesByIdPais = clientesByIdPais;
+    public void setClientesByIdPais(Collection<Cliente> clienteByIdPais) {
+        this.clienteByIdPais = clienteByIdPais;
     }
 }

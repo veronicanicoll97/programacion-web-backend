@@ -1,6 +1,8 @@
 package dao;
 
 
+import model.Cliente;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,8 +18,7 @@ public class ClienteDAO {
     @PersistenceContext(unitName = "pruebaPU")
     private EntityManager em;
 
-    public void agregar(ClienteDAO entidad) {
-
+    public void agregar(Cliente entidad) {
         this.em.persist(entidad);
 
     }

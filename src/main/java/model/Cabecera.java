@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Cabeceras {
+public class Cabecera {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_cabecera")
@@ -25,12 +25,12 @@ public class Cabeceras {
     private int idConcepto;
     @ManyToOne
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", nullable = false,  insertable = false, updatable = false)
-    private Clientes clientesByIdCliente;
+    private Cliente clienteByIdCliente;
     @ManyToOne
     @JoinColumn(name = "id_concepto", referencedColumnName = "id_concepto", nullable = false,  insertable = false, updatable = false)
     private ConceptosUsosPuntos conceptosUsosPuntosByIdConcepto;
-    @OneToMany(mappedBy = "cabecerasByIdCabecera")
-    private Collection<Detalles> detallesByIdCabecera;
+    @OneToMany(mappedBy = "cabeceraByIdCabecera")
+    private Collection<Detalle> detalleByIdCabecera;
 
     public int getIdCabecera() {
         return idCabecera;
@@ -76,8 +76,8 @@ public class Cabeceras {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Cabeceras cabeceras = (Cabeceras) o;
-        return idCabecera == cabeceras.idCabecera && idCliente == cabeceras.idCliente && puntajeUtilizado == cabeceras.puntajeUtilizado && idConcepto == cabeceras.idConcepto && Objects.equals(fechaUso, cabeceras.fechaUso);
+        Cabecera cabecera = (Cabecera) o;
+        return idCabecera == cabecera.idCabecera && idCliente == cabecera.idCliente && puntajeUtilizado == cabecera.puntajeUtilizado && idConcepto == cabecera.idConcepto && Objects.equals(fechaUso, cabecera.fechaUso);
     }
 
     @Override
@@ -85,12 +85,12 @@ public class Cabeceras {
         return Objects.hash(idCabecera, idCliente, puntajeUtilizado, fechaUso, idConcepto);
     }
 
-    public Clientes getClientesByIdCliente() {
-        return clientesByIdCliente;
+    public Cliente getClientesByIdCliente() {
+        return clienteByIdCliente;
     }
 
-    public void setClientesByIdCliente(Clientes clientesByIdCliente) {
-        this.clientesByIdCliente = clientesByIdCliente;
+    public void setClientesByIdCliente(Cliente clienteByIdCliente) {
+        this.clienteByIdCliente = clienteByIdCliente;
     }
 
     public ConceptosUsosPuntos getConceptosUsosPuntosByIdConcepto() {
@@ -101,11 +101,11 @@ public class Cabeceras {
         this.conceptosUsosPuntosByIdConcepto = conceptosUsosPuntosByIdConcepto;
     }
 
-    public Collection<Detalles> getDetallesByIdCabecera() {
-        return detallesByIdCabecera;
+    public Collection<Detalle> getDetallesByIdCabecera() {
+        return detalleByIdCabecera;
     }
 
-    public void setDetallesByIdCabecera(Collection<Detalles> detallesByIdCabecera) {
-        this.detallesByIdCabecera = detallesByIdCabecera;
+    public void setDetallesByIdCabecera(Collection<Detalle> detalleByIdCabecera) {
+        this.detalleByIdCabecera = detalleByIdCabecera;
     }
 }

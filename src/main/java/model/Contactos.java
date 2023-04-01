@@ -17,7 +17,7 @@ public class Contactos {
     @Column(name = "valor")
     private String valor;
     @OneToMany(mappedBy = "contactosByIdContacto")
-    private Collection<Clientes> clientesByIdContacto;
+    private Collection<Cliente> clienteByIdContacto;
 
     public int getIdContacto() {
         return idContacto;
@@ -56,11 +56,11 @@ public class Contactos {
         return Objects.hash(idContacto, tipoContacto, valor);
     }
 
-    public Collection<Clientes> getClientesByIdContacto() {
-        return clientesByIdContacto;
+    public Collection<Cliente> getClientesByIdContacto() {
+        return clienteByIdContacto;
     }
 
-    public void setClientesByIdContacto(Collection<Clientes> clientesByIdContacto) {
-        this.clientesByIdContacto = clientesByIdContacto;
+    public void setClientesByIdContacto(Collection<Cliente> clienteByIdContacto) {
+        this.clienteByIdContacto = clienteByIdContacto;
     }
 }

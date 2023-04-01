@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Clientes {
+public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_cliente")
@@ -32,10 +32,10 @@ public class Clientes {
     @Basic
     @Column(name = "id_contacto")
     private int idContacto;
-    @OneToMany(mappedBy = "clientesByIdCliente")
+    @OneToMany(mappedBy = "clienteByIdCliente")
     private Collection<BolsasPuntosEntity> bolsasPuntosByIdCliente;
-    @OneToMany(mappedBy = "clientesByIdCliente")
-    private Collection<Cabeceras> cabecerasByIdCliente;
+    @OneToMany(mappedBy = "clienteByIdCliente")
+    private Collection<Cabecera> cabeceraByIdCliente;
     @ManyToOne
     @JoinColumn(name = "id_tipo_documento", referencedColumnName = "id_tipo_documento", nullable = false,  insertable = false, updatable = false)
     private TiposDocumentos tiposDocumentosByIdTipoDocumento;
@@ -114,8 +114,8 @@ public class Clientes {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Clientes clientes = (Clientes) o;
-        return idCliente == clientes.idCliente && idTipoDocumento == clientes.idTipoDocumento && idPais == clientes.idPais && idContacto == clientes.idContacto && Objects.equals(nombre, clientes.nombre) && Objects.equals(apellido, clientes.apellido) && Objects.equals(nroDocumento, clientes.nroDocumento) && Objects.equals(fechaNacimiento, clientes.fechaNacimiento);
+        Cliente cliente = (Cliente) o;
+        return idCliente == cliente.idCliente && idTipoDocumento == cliente.idTipoDocumento && idPais == cliente.idPais && idContacto == cliente.idContacto && Objects.equals(nombre, cliente.nombre) && Objects.equals(apellido, cliente.apellido) && Objects.equals(nroDocumento, cliente.nroDocumento) && Objects.equals(fechaNacimiento, cliente.fechaNacimiento);
     }
 
     @Override
@@ -131,12 +131,12 @@ public class Clientes {
         this.bolsasPuntosByIdCliente = bolsasPuntosByIdCliente;
     }
 
-    public Collection<Cabeceras> getCabecerasByIdCliente() {
-        return cabecerasByIdCliente;
+    public Collection<Cabecera> getCabecerasByIdCliente() {
+        return cabeceraByIdCliente;
     }
 
-    public void setCabecerasByIdCliente(Collection<Cabeceras> cabecerasByIdCliente) {
-        this.cabecerasByIdCliente = cabecerasByIdCliente;
+    public void setCabecerasByIdCliente(Collection<Cabecera> cabeceraByIdCliente) {
+        this.cabeceraByIdCliente = cabeceraByIdCliente;
     }
 
     public TiposDocumentos getTiposDocumentosByIdTipoDocumento() {

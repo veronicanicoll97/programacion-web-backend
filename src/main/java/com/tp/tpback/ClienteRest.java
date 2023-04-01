@@ -1,14 +1,9 @@
 package com.tp.tpback;
 
-import py.com.progweb.prueba.ejb.ClienteDAO;
-import py.com.progweb.prueba.model.Cliente;
 
-import javax.ejb.EJBTransactionRolledbackException;
-import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
-import java.sql.SQLException;
-package com.tp.tpback;
+import dao.ClienteDAO;
+import model.Cliente;
+
 import javax.ejb.EJBTransactionRolledbackException;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -21,19 +16,19 @@ import java.sql.SQLException;
 public class ClienteRest {
 
     @Inject
-    private Cliente persona;
+    private ClienteDAO clienteDAO;
 
     @GET
     @Path("/")
     public Response listar() {
-        return Response.ok(persona.lista()).build();
+        return Response.ok(clienteDAO.lista()).build();
     }
 
     @POST
     @Path("/")
     public Response crear(Cliente p) {
         try{
-            this.persona.agregar(p);
+            this.clienteDAO.agregar(p);
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -60,7 +55,7 @@ public class ClienteRest {
     @Path("/{id}")
     public Response update(Cliente c, @PathParam("id") String id) {
         try{
-            this.persona.update(c, Integer.parseInt(id));
+            this.clienteDAO.update(c, Integer.parseInt(id));
             return Response.ok().build();
         }catch (EJBTransactionRolledbackException e){
             Throwable t = e.getCause();
@@ -88,7 +83,7 @@ public class ClienteRest {
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") int id){
-        this.persona.delete(id);
+        this.clienteDAO.delete(id);
         return Response.ok().build();
     }
 

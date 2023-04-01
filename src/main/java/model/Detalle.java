@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Detalles {
+public class Detalle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_detalle")
@@ -20,7 +20,7 @@ public class Detalles {
     private double idBolsa;
     @ManyToOne
     @JoinColumn(name = "id_cabecera", referencedColumnName = "id_cabecera", nullable = false, insertable = false, updatable = false)
-    private Cabeceras cabecerasByIdCabecera;
+    private Cabecera cabeceraByIdCabecera;
     @ManyToOne
     @JoinColumn(name = "id_bolsa", referencedColumnName = "id_bolsa", nullable = false, insertable = false, updatable = false)
     private BolsasPuntosEntity bolsasPuntosByIdBolsa;
@@ -61,8 +61,8 @@ public class Detalles {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Detalles detalles = (Detalles) o;
-        return idDetalle == detalles.idDetalle && idCabecera == detalles.idCabecera && puntajeUtilizado == detalles.puntajeUtilizado && Double.compare(detalles.idBolsa, idBolsa) == 0;
+        Detalle detalle = (Detalle) o;
+        return idDetalle == detalle.idDetalle && idCabecera == detalle.idCabecera && puntajeUtilizado == detalle.puntajeUtilizado && Double.compare(detalle.idBolsa, idBolsa) == 0;
     }
 
     @Override
@@ -70,12 +70,12 @@ public class Detalles {
         return Objects.hash(idDetalle, idCabecera, puntajeUtilizado, idBolsa);
     }
 
-    public Cabeceras getCabecerasByIdCabecera() {
-        return cabecerasByIdCabecera;
+    public Cabecera getCabecerasByIdCabecera() {
+        return cabeceraByIdCabecera;
     }
 
-    public void setCabecerasByIdCabecera(Cabeceras cabecerasByIdCabecera) {
-        this.cabecerasByIdCabecera = cabecerasByIdCabecera;
+    public void setCabecerasByIdCabecera(Cabecera cabeceraByIdCabecera) {
+        this.cabeceraByIdCabecera = cabeceraByIdCabecera;
     }
 
     public BolsasPuntosEntity getBolsasPuntosByIdBolsa() {
