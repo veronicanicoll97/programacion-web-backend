@@ -54,7 +54,7 @@ CREATE TABLE clientes (
 );
 
 
-CREATE TABLE cabecera (
+CREATE TABLE cabeceras (
                            id_cabecera SERIAL NOT NULL,
                            id_cliente INTEGER NOT NULL,
                            puntaje_utilizado INTEGER DEFAULT 0 NOT NULL,
@@ -86,16 +86,9 @@ CREATE TABLE detalle (
 );
 
 
-ALTER TABLE cabecera ADD CONSTRAINT conceptos_usos_puntos_cabeceras_fk
+ALTER TABLE cabeceras ADD CONSTRAINT conceptos_usos_puntos_cabeceras_fk
     FOREIGN KEY (id_concepto)
         REFERENCES conceptos_usos_puntos (id_concepto)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION
-    NOT DEFERRABLE;
-
-ALTER TABLE clientes ADD CONSTRAINT contactos_clientes_fk
-    FOREIGN KEY (id_contacto)
-        REFERENCES contactos (id_contacto)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
@@ -121,7 +114,7 @@ ALTER TABLE bolsas_puntos ADD CONSTRAINT clientes_bolsas_puntos_fk
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
 
-ALTER TABLE cabecera ADD CONSTRAINT clientes_cabeceras_fk
+ALTER TABLE cabeceras ADD CONSTRAINT clientes_cabeceras_fk
     FOREIGN KEY (id_cliente)
         REFERENCES clientes (id_cliente)
         ON DELETE NO ACTION
@@ -130,7 +123,7 @@ ALTER TABLE cabecera ADD CONSTRAINT clientes_cabeceras_fk
 
 ALTER TABLE detalle ADD CONSTRAINT cabeceras_detalles_fk
     FOREIGN KEY (id_cabecera)
-        REFERENCES cabecera (id_cabecera)
+        REFERENCES cabeceras (id_cabecera)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
