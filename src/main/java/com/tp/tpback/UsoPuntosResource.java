@@ -61,7 +61,7 @@ public class UsoPuntosResource {
                 throw new Exception("No se encontró una regla asingacin con con ese intervalo de monto");
             }
 
-            List<VencimientoPunto> vencimientos = vencimientoDAO.listarVencimientoPuntoesValidos();
+            List<VencimientoPunto> vencimientos = vencimientoDAO.listarVencimientoPuntoes();
             if(vencimientos == null){
                 throw new Exception("No se encontró una parametrización de vencimiento de puntos");
             }
