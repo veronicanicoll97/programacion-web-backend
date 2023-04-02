@@ -61,7 +61,7 @@ public class UsoPuntosResource {
                 throw new Exception("No se encontró una regla asingacin con con ese intervalo de monto");
             }
 
-            List<VencimientoPunto> vencimientos = vencimientoDAO.listarVencimientoPuntoes();
+            List<VencimientoPunto> vencimientos = vencimientoDAO.listarVencimientoPuntoesValidos();
             if(vencimientos == null){
                 throw new Exception("No se encontró una parametrización de vencimiento de puntos");
             }
@@ -191,6 +191,12 @@ public class UsoPuntosResource {
         return builder.build();
     }
 
+    @Path("/reporteusopuntos")
+    @POST
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List<Cabecera> listarUsoPunto(JsonObject json) {
+        return cabeceraDAO.listarCabeceraes();
+    }
 
     Map<String, String> getResponse(String status, String code, String msg, String data){
         Map<String, String> responseObj = new HashMap<>();

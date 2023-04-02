@@ -121,14 +121,14 @@ ALTER TABLE cabeceras ADD CONSTRAINT clientes_cabeceras_fk
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
 
-ALTER TABLE detalle ADD CONSTRAINT cabeceras_detalles_fk
+ALTER TABLE detalles ADD CONSTRAINT cabeceras_detalles_fk
     FOREIGN KEY (id_cabecera)
         REFERENCES cabeceras (id_cabecera)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
     NOT DEFERRABLE;
 
-ALTER TABLE detalle ADD CONSTRAINT bolsas_puntos_detalles_fk
+ALTER TABLE detalles ADD CONSTRAINT bolsas_puntos_detalles_fk
     FOREIGN KEY (id_bolsa)
         REFERENCES bolsas_puntos (id_bolsa)
         ON DELETE NO ACTION

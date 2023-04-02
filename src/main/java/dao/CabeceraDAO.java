@@ -46,6 +46,11 @@ public class CabeceraDAO {
         return entityManager.find(Cabecera.class, idCabecera);
     }
 
+    public List<Cabecera> listarCabeceraCliente(int idCliente) {
+        Query query = entityManager.createQuery("SELECT p FROM Cabecera p where p.idCliente = :clienteId ");
+        return query.getResultList();
+    }
+
     public void cerrarEntityManager() {
         entityManager.close();
         entityManagerFactory.close();
