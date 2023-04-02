@@ -11,20 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dml.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CabeceraDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CabeceraDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BolsaPunto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cabecera.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ConceptoUsoPuntos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Detalle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Json.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ReglaAsignacionPunto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TipoDocumento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/VencimientoPunto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/web-backend-proy/programacion-web-backend/src/main/java/util",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15722656",
