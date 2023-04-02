@@ -164,6 +164,32 @@ public class ClienteResource {
         return builder.build();
     }
 
+    @Path("/cliente-by-name")
+    @GET
+    @Consumes( { MediaType.APPLICATION_JSON_PATCH_JSON})
+    @Produces({ MediaType.APPLICATION_JSON})
+    public Response cliente_by_name(JsonObject json) {
+        Response.ResponseBuilder builder = null;
+        /*print to wildfly*/
+        try{
+            String nombre = json.getString("nombre");
+            System.out.println("nombre: " + nombre);
+            Cliente cliente = (Cliente) clienteDAO.listarClienteByName(nombre);
+            System.out.println("Cliente: " +  cliente);
+            if(cliente != null){
+                Map<String, String> responseObj = getResponse("OK", "200", "Cliente obtenido.", "");
+                builder = Response.status(Response.Status.OK).entity(responseObj);
+            } else{
+                Map<String, String> responseObj = getResponse("ERROR", "500", "No se encontró un cliente con ese nombre", "");
+                builder = Response.status(Response.Status.NOT_FOUND).entity(responseObj);
+            }
+        }catch (Exception e){
+            Map<String, String> responseObj = getResponse("ERROR", "500", "Error al eliminar el cliente"+e.getMessage(), "");
+            builder = Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(responseObj);
+        }
+        return builder.build();
+    }
+
     Map<String, String> getResponse(String status, String code, String msg, String data){
         Map<String, String> responseObj = new HashMap<>();
         responseObj.put("status", status);

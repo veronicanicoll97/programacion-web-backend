@@ -42,6 +42,13 @@ public class ClienteDAO {
         return query.getResultList();
     }
 
+
+    public List listarClienteByName(String nombreCliente) {
+        String clienteByName = "select * from clientes where nombre like '%" + nombreCliente + "%'";
+        Query query = entityManager.createQuery(clienteByName);
+        return query.getResultList();
+    }
+
     public Cliente buscarClientePorId(int idCliente) {
         return entityManager.find(Cliente.class, idCliente);
     }
