@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "cabeceras")
+@Table(name = "cabeceras", schema = "public", catalog = "backdb")
 public class Cabecera {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -24,14 +24,6 @@ public class Cabecera {
     @Basic
     @Column(name = "id_concepto")
     private int idConcepto;
-    @ManyToOne
-    @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", nullable = false,  insertable = false, updatable = false)
-    private Cliente clienteByIdCliente;
-    @ManyToOne
-    @JoinColumn(name = "id_concepto", referencedColumnName = "id_concepto", nullable = false,  insertable = false, updatable = false)
-    private ConceptoUsoPuntos conceptoUsoPuntosByIdConcepto;
-    @OneToMany(mappedBy = "cabeceraByIdCabecera")
-    private Collection<Detalle> detalleByIdCabecera;
 
     public int getIdCabecera() {
         return idCabecera;
@@ -77,8 +69,8 @@ public class Cabecera {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Cabecera cabecera = (Cabecera) o;
-        return idCabecera == cabecera.idCabecera && idCliente == cabecera.idCliente && puntajeUtilizado == cabecera.puntajeUtilizado && idConcepto == cabecera.idConcepto && Objects.equals(fechaUso, cabecera.fechaUso);
+        Cabecera cabeceras = (Cabecera) o;
+        return idCabecera == cabeceras.idCabecera && idCliente == cabeceras.idCliente && puntajeUtilizado == cabeceras.puntajeUtilizado && idConcepto == cabeceras.idConcepto && Objects.equals(fechaUso, cabeceras.fechaUso);
     }
 
     @Override
@@ -86,27 +78,5 @@ public class Cabecera {
         return Objects.hash(idCabecera, idCliente, puntajeUtilizado, fechaUso, idConcepto);
     }
 
-    public Cliente getClientesByIdCliente() {
-        return clienteByIdCliente;
-    }
 
-    public void setClientesByIdCliente(Cliente clienteByIdCliente) {
-        this.clienteByIdCliente = clienteByIdCliente;
-    }
-
-    public ConceptoUsoPuntos getConceptosUsosPuntosByIdConcepto() {
-        return conceptoUsoPuntosByIdConcepto;
-    }
-
-    public void setConceptosUsosPuntosByIdConcepto(ConceptoUsoPuntos conceptoUsoPuntosByIdConcepto) {
-        this.conceptoUsoPuntosByIdConcepto = conceptoUsoPuntosByIdConcepto;
-    }
-
-    public Collection<Detalle> getDetallesByIdCabecera() {
-        return detalleByIdCabecera;
-    }
-
-    public void setDetallesByIdCabecera(Collection<Detalle> detalleByIdCabecera) {
-        this.detalleByIdCabecera = detalleByIdCabecera;
-    }
 }

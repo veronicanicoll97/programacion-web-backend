@@ -58,7 +58,7 @@ public class VencimientoPunto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VencimientoPunto that = (VencimientoPunto) o;
-        return diasDuracion == that.diasDuracion && Objects.equals(idVencimiento, that.idVencimiento) && Objects.equals(fechaInicio, that.fechaInicio) && Objects.equals(fechaFin, that.fechaFin);
+        return idVencimiento == that.idVencimiento && diasDuracion == that.diasDuracion && Objects.equals(fechaInicio, that.fechaInicio) && Objects.equals(fechaFin, that.fechaFin);
     }
 
     @Override

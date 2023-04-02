@@ -17,8 +17,6 @@ public class ConceptoUsoPuntos {
     @Basic
     @Column(name = "puntos_requeridos")
     private int puntosRequeridos;
-    @OneToMany(mappedBy = "conceptoUsoPuntosByIdConcepto")
-    private Collection<Cabecera> cabeceraByIdConcepto;
 
     public int getIdConcepto() {
         return idConcepto;
@@ -57,11 +55,4 @@ public class ConceptoUsoPuntos {
         return Objects.hash(idConcepto, descripcion, puntosRequeridos);
     }
 
-    public Collection<Cabecera> getCabecerasByIdConcepto() {
-        return cabeceraByIdConcepto;
-    }
-
-    public void setCabecerasByIdConcepto(Collection<Cabecera> cabeceraByIdConcepto) {
-        this.cabeceraByIdConcepto = cabeceraByIdConcepto;
-    }
 }

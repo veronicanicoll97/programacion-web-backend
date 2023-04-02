@@ -14,6 +14,15 @@
         <class>model.ReglaAsignacionPunto</class>
         <class>model.TipoDocumento</class>
         <class>model.VencimientoPunto</class>
+        <class>model.BolsasPuntos</class>
+        <class>model.Cabeceras</class>
+        <class>model.Clientes</class>
+        <class>model.ConceptosUsosPuntos</class>
+        <class>model.Contactos</class>
+        <class>model.Detalles</class>
+        <class>model.ReglasAsignacionesPuntos</class>
+        <class>model.TiposDocumentos</class>
+        <class>model.VencimientosPuntos</class>
         <properties>
             <property name="hibernate.id.new_generator_mappings" value="true"/>
             <property name="hibernate.show_sql" value="true" />

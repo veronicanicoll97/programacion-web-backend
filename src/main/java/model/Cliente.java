@@ -6,9 +6,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "clientes")
+@Table(name = "clientes", schema = "public", catalog = "backdb")
 public class Cliente {
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_cliente")
@@ -19,13 +18,6 @@ public class Cliente {
     @Basic
     @Column(name = "apellido")
     private String apellido;
-
-    @Basic
-    @Column(name = "telefono")
-    private String telefono;
-    @Basic
-    @Column(name = "email")
-    private String email;
     @Basic
     @Column(name = "nro_documento")
     private String nroDocumento;
@@ -38,16 +30,14 @@ public class Cliente {
     @Basic
     @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
-    @OneToMany(mappedBy = "clienteByIdCliente")
-    private Collection<BolsaPunto> bolsasPuntosByIdCliente;
-    @OneToMany(mappedBy = "clienteByIdCliente")
-    private Collection<Cabecera> cabeceraByIdCliente;
-    @ManyToOne
-    @JoinColumn(name = "id_tipo_documento", referencedColumnName = "id_tipo_documento", nullable = false,  insertable = false, updatable = false)
-    private TipoDocumento tipoDocumentosByIdTipoDocumento;
-    @ManyToOne
-    @JoinColumn(name = "id_pais", referencedColumnName = "id_pais", nullable = false,  insertable = false, updatable = false)
-    private Pais paisByIdPais;
+    @Basic
+    @Column(name = "telefono")
+    private String telefono;
+    @Basic
+    @Column(name = "email")
+    private String email;
+
+
 
     public int getIdCliente() {
         return idCliente;
@@ -125,46 +115,12 @@ public class Cliente {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return idCliente == cliente.idCliente && idTipoDocumento == cliente.idTipoDocumento && idPais == cliente.idPais && telefono.equals(cliente.telefono) && email.equals(cliente.email) && Objects.equals(nombre, cliente.nombre) && Objects.equals(apellido, cliente.apellido) && Objects.equals(nroDocumento, cliente.nroDocumento) && Objects.equals(fechaNacimiento, cliente.fechaNacimiento);
+        Cliente clientes = (Cliente) o;
+        return idCliente == clientes.idCliente && idTipoDocumento == clientes.idTipoDocumento && idPais == clientes.idPais && Objects.equals(nombre, clientes.nombre) && Objects.equals(apellido, clientes.apellido) && Objects.equals(nroDocumento, clientes.nroDocumento) && Objects.equals(fechaNacimiento, clientes.fechaNacimiento) && Objects.equals(telefono, clientes.telefono) && Objects.equals(email, clientes.email);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(idCliente, nombre, apellido, nroDocumento, idTipoDocumento, idPais, fechaNacimiento, telefono, email);
     }
-
-    public Collection<BolsaPunto> getBolsasPuntosByIdCliente() {
-        return bolsasPuntosByIdCliente;
-    }
-
-    public void setBolsasPuntosByIdCliente(Collection<BolsaPunto> bolsasPuntosByIdCliente) {
-        this.bolsasPuntosByIdCliente = bolsasPuntosByIdCliente;
-    }
-
-    public Collection<Cabecera> getCabecerasByIdCliente() {
-        return cabeceraByIdCliente;
-    }
-
-    public void setCabecerasByIdCliente(Collection<Cabecera> cabeceraByIdCliente) {
-        this.cabeceraByIdCliente = cabeceraByIdCliente;
-    }
-
-    public TipoDocumento getTiposDocumentosByIdTipoDocumento() {
-        return tipoDocumentosByIdTipoDocumento;
-    }
-
-    public void setTiposDocumentosByIdTipoDocumento(TipoDocumento tipoDocumentosByIdTipoDocumento) {
-        this.tipoDocumentosByIdTipoDocumento = tipoDocumentosByIdTipoDocumento;
-    }
-
-    public Pais getPaisByIdPais() {
-        return paisByIdPais;
-    }
-
-    public void setPaisByIdPais(Pais paisByIdPais) {
-        this.paisByIdPais = paisByIdPais;
-    }
-
-
 }

@@ -33,11 +33,6 @@ public class BolsaPunto {
     @Basic
     @Column(name = "monto_operacion")
     private double montoOperacion;
-    @ManyToOne
-    @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente", nullable = false,  insertable = false, updatable = false)
-    private Cliente clienteByIdCliente;
-    @OneToMany(mappedBy = "bolsasPuntosByIdBolsa")
-    private Collection<Detalle> detalleByIdBolsa;
 
     public int getIdBolsa() {
         return idBolsa;
@@ -108,7 +103,7 @@ public class BolsaPunto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BolsaPunto that = (BolsaPunto) o;
-        return Double.compare(that.idBolsa, idBolsa) == 0 && idCliente == that.idCliente && puntajeAsignado == that.puntajeAsignado && puntajeUtilizado == that.puntajeUtilizado && saldoPuntos == that.saldoPuntos && Double.compare(that.montoOperacion, montoOperacion) == 0 && Objects.equals(fechaAsignacionPunto, that.fechaAsignacionPunto) && Objects.equals(fechaCaducidadPunto, that.fechaCaducidadPunto);
+        return idBolsa == that.idBolsa && idCliente == that.idCliente && puntajeAsignado == that.puntajeAsignado && puntajeUtilizado == that.puntajeUtilizado && saldoPuntos == that.saldoPuntos && Double.compare(that.montoOperacion, montoOperacion) == 0 && Objects.equals(fechaAsignacionPunto, that.fechaAsignacionPunto) && Objects.equals(fechaCaducidadPunto, that.fechaCaducidadPunto);
     }
 
     @Override
@@ -116,19 +111,4 @@ public class BolsaPunto {
         return Objects.hash(idBolsa, idCliente, fechaAsignacionPunto, fechaCaducidadPunto, puntajeAsignado, puntajeUtilizado, saldoPuntos, montoOperacion);
     }
 
-    public Cliente getClientesByIdCliente() {
-        return clienteByIdCliente;
-    }
-
-    public void setClientesByIdCliente(Cliente clienteByIdCliente) {
-        this.clienteByIdCliente = clienteByIdCliente;
-    }
-
-    public Collection<Detalle> getDetallesByIdBolsa() {
-        return detalleByIdBolsa;
-    }
-
-    public void setDetallesByIdBolsa(Collection<Detalle> detalleByIdBolsa) {
-        this.detalleByIdBolsa = detalleByIdBolsa;
-    }
 }

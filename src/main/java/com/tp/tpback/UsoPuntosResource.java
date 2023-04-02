@@ -195,7 +195,8 @@ public class UsoPuntosResource {
     @POST
     @Produces({ MediaType.APPLICATION_JSON})
     public List<Cabecera> listarUsoPunto(JsonObject json) {
-        return cabeceraDAO.listarCabeceraes();
+        int id_cliente = json.getInt("id_cliente");
+        return cabeceraDAO.listarCabeceraCliente(id_cliente);
     }
 
     Map<String, String> getResponse(String status, String code, String msg, String data){

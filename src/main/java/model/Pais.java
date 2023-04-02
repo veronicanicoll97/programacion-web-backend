@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
+@Table(name = "pais", schema = "public", catalog = "backdb")
 @Entity
 public class Pais {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +17,7 @@ public class Pais {
     @Basic
     @Column(name = "nacionalidad")
     private String nacionalidad;
-    @OneToMany(mappedBy = "paisByIdPais")
-    private Collection<Cliente> clienteByIdPais;
+
 
     public int getIdPais() {
         return idPais;
@@ -56,11 +56,5 @@ public class Pais {
         return Objects.hash(idPais, descripcion, nacionalidad);
     }
 
-    public Collection<Cliente> getClientesByIdPais() {
-        return clienteByIdPais;
-    }
 
-    public void setClientesByIdPais(Collection<Cliente> clienteByIdPais) {
-        this.clienteByIdPais = clienteByIdPais;
-    }
 }

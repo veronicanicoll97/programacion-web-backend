@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "detalles")
+@Table(name = "detalles", schema = "public", catalog = "backdb")
 public class Detalle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -18,21 +18,14 @@ public class Detalle {
     private int puntajeUtilizado;
     @Basic
     @Column(name = "id_bolsa")
-    private double idBolsa;
-    @ManyToOne
-    @JoinColumn(name = "id_cabecera", referencedColumnName = "id_cabecera", nullable = false, insertable = false, updatable = false)
-    private Cabecera cabeceraByIdCabecera;
-    @ManyToOne
-    @JoinColumn(name = "id_bolsa", referencedColumnName = "id_bolsa", nullable = false, insertable = false, updatable = false)
-    private BolsaPunto bolsasPuntosByIdBolsa;
-
+    private int idBolsa;
 
     public Detalle() {
     }
 
-    public Detalle(int idCabecera, int puntajeUtilizado, double idBolsa) {
+    public Detalle(int idCabecera, int puntos_usados, int idBolsa) {
         this.idCabecera = idCabecera;
-        this.puntajeUtilizado = puntajeUtilizado;
+        this.puntajeUtilizado = puntos_usados;
         this.idBolsa = idBolsa;
     }
 
@@ -60,11 +53,11 @@ public class Detalle {
         this.puntajeUtilizado = puntajeUtilizado;
     }
 
-    public double getIdBolsa() {
+    public int getIdBolsa() {
         return idBolsa;
     }
 
-    public void setIdBolsa(double idBolsa) {
+    public void setIdBolsa(int idBolsa) {
         this.idBolsa = idBolsa;
     }
 
@@ -72,8 +65,8 @@ public class Detalle {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Detalle detalle = (Detalle) o;
-        return idDetalle == detalle.idDetalle && idCabecera == detalle.idCabecera && puntajeUtilizado == detalle.puntajeUtilizado && Double.compare(detalle.idBolsa, idBolsa) == 0;
+        Detalle detalles = (Detalle) o;
+        return idDetalle == detalles.idDetalle && idCabecera == detalles.idCabecera && puntajeUtilizado == detalles.puntajeUtilizado && idBolsa == detalles.idBolsa;
     }
 
     @Override
@@ -81,19 +74,4 @@ public class Detalle {
         return Objects.hash(idDetalle, idCabecera, puntajeUtilizado, idBolsa);
     }
 
-    public Cabecera getCabecerasByIdCabecera() {
-        return cabeceraByIdCabecera;
-    }
-
-    public void setCabecerasByIdCabecera(Cabecera cabeceraByIdCabecera) {
-        this.cabeceraByIdCabecera = cabeceraByIdCabecera;
-    }
-
-    public BolsaPunto getBolsasPuntosByIdBolsa() {
-        return bolsasPuntosByIdBolsa;
-    }
-
-    public void setBolsasPuntosByIdBolsa(BolsaPunto bolsasPuntosByIdBolsa) {
-        this.bolsasPuntosByIdBolsa = bolsasPuntosByIdBolsa;
-    }
 }

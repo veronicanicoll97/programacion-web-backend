@@ -48,6 +48,7 @@ public class CabeceraDAO {
 
     public List<Cabecera> listarCabeceraCliente(int idCliente) {
         Query query = entityManager.createQuery("SELECT p FROM Cabecera p where p.idCliente = :clienteId ");
+        query.setParameter("clienteId", idCliente);
         return query.getResultList();
     }
 
