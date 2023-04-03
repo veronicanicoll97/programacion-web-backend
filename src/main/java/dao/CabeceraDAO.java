@@ -6,7 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class CabeceraDAO {
 
@@ -49,6 +52,25 @@ public class CabeceraDAO {
     public List<Cabecera> listarCabeceraCliente(int idCliente) {
         Query query = entityManager.createQuery("SELECT p FROM Cabecera p where p.idCliente = :clienteId ");
         query.setParameter("clienteId", idCliente);
+        return query.getResultList();
+    }
+
+    public List<Cabecera> listarCabeceraIdConcepto(int idConcepto) {
+        Query query = entityManager.createQuery("SELECT p FROM Cabecera p where p.idConcepto = :idConcepto ");
+        query.setParameter("idConcepto", idConcepto);
+        return query.getResultList();
+    }
+
+    public List<Cabecera> listarCabeceraFecha(String fechaUso) {
+        java.util.Date fechaUtil = null;
+        try {
+            fechaUtil = new SimpleDateFormat("yyyy-MM-dd").parse(fechaUso);
+        }catch (Exception e){
+
+        }
+        java.sql.Date fechaSql = new java.sql.Date(fechaUtil.getTime());
+        Query query = entityManager.createQuery("SELECT p FROM Cabecera p where p.fechaUso = :fechaSql ");
+        query.setParameter("fechaSql", fechaSql);
         return query.getResultList();
     }
 

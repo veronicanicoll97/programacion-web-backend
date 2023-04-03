@@ -191,13 +191,49 @@ public class UsoPuntosResource {
         return builder.build();
     }
 
-    @Path("/reporteusopuntos")
+    @Path("/reporteusopuntoscliente")
     @POST
     @Produces({ MediaType.APPLICATION_JSON})
     public List<Cabecera> listarUsoPunto(JsonObject json) {
         int id_cliente = json.getInt("id_cliente");
         return cabeceraDAO.listarCabeceraCliente(id_cliente);
     }
+
+
+    @Path("/reporteusopuntosconcepto")
+    @POST
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List<Cabecera> listarUsoPuntoConcepto(JsonObject json) {
+        int id_concepto = json.getInt("id_concepto");
+        return cabeceraDAO.listarCabeceraIdConcepto(id_concepto);
+    }
+
+    @Path("/reporteusopuntosfecha")
+    @POST
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List<Cabecera> listarUsoPuntoFecha(JsonObject json) {
+        String fechaUso = json.getString("fechaUso");
+        return cabeceraDAO.listarCabeceraFecha(fechaUso);
+    }
+
+    @Path("/reportebolsacliente")
+    @POST
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List<BolsaPunto> listarBolsa(JsonObject json) {
+        int id_cliente = json.getInt("id_cliente");
+        return bolsaDAO.listarBolsaCliente(id_cliente);
+    }
+
+    @Path("/reportebolsarango")
+    @POST
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List<BolsaPunto> listarBolsaRango(JsonObject json) {
+        int limiteInf = json.getInt("limite_inf");
+        int limiteSup = json.getInt("limite_sup");
+        return bolsaDAO.listarBolsaRangoPuntos(limiteInf,limiteSup);
+    }
+
+
 
     Map<String, String> getResponse(String status, String code, String msg, String data){
         Map<String, String> responseObj = new HashMap<>();

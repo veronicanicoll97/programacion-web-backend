@@ -1,6 +1,7 @@
 package dao;
 
 import model.BolsaPunto;
+import model.Cabecera;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -60,6 +61,19 @@ public class BolsaPuntoDAO {
     public void cerrarEntityManager() {
         entityManager.close();
         entityManagerFactory.close();
+    }
+
+    public List<BolsaPunto> listarBolsaCliente(int idCliente) {
+        Query query = entityManager.createQuery("SELECT p FROM BolsaPunto p where p.idCliente = :clienteId ");
+        query.setParameter("clienteId", idCliente);
+        return query.getResultList();
+    }
+
+    public List<BolsaPunto> listarBolsaRangoPuntos(int limiteInf, int limiteSup) {
+        Query query = entityManager.createQuery("SELECT p FROM BolsaPunto p where p.puntajeAsignado BETWEEN :limiteInf AND :limiteSup");
+        query.setParameter("limiteInf", limiteInf);
+        query.setParameter("limiteSup", limiteSup);
+        return query.getResultList();
     }
 
 }
