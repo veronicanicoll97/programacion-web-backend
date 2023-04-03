@@ -48,6 +48,10 @@ public class BolsaPuntoDAO {
         return query.getResultList();
     }
 
+    public List<BolsaPunto> listarBolsaPuntoesCaducidos() {
+        Query query = entityManager.createQuery("SELECT p FROM BolsaPunto p where p.saldoPuntos > 0 and p.fechaCaducidadPunto <= CURRENT_DATE order by p.fechaAsignacionPunto, p.idBolsa");
+        return query.getResultList();
+    }
     public List<BolsaPunto> listarBolsaPuntoByIdCliente(int clienteId) {
         Query query = entityManager.createQuery("SELECT p FROM BolsaPunto p where p.idCliente = :clienteId and p.saldoPuntos > 0 order by p.fechaAsignacionPunto, p.idBolsa");
         query.setParameter("clienteId", clienteId);

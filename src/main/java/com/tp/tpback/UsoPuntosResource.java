@@ -256,6 +256,29 @@ public class UsoPuntosResource {
         return bolsaDAO.puntosPorVencerByCliente();
     }
 
+    @Path("/actualizar-fecha-caducidad")
+    @POST
+    @Consumes({ MediaType.APPLICATION_JSON})
+    @Produces({ MediaType.APPLICATION_JSON})
+    public Response actualizar_fecha_caducidad(JsonObject json) {
+        Response.ResponseBuilder builder = null;
+        int id = json.getInt("id_bolsa");
+        try{
+            BolsaPunto bolsa = bolsaDAO.buscarBolsaPuntoPorId(id);
+            bolsa.setFechaCaducidadPunto(new java.sql.Date(new Date().getTime()));
+            bolsaDAO.actualizarBolsaPunto(bolsa);
+            Map<String, String> responseObj = getResponse("OK", "200", "Se actualizo la fecha de caducidad por hoy", "");
+            builder = Response.status(Response.Status.OK).entity(responseObj);
+        }
+        catch (Exception e){
+            Map<String, String> responseObj = getResponse("ERROR", "500", "No se pudo actualizar la fecha de caducidad: "+e.getMessage(), "");
+            builder = Response.status(Response.Status.NOT_FOUND).entity(responseObj);
+        }
+
+        return builder.build();
+
+    }
+
     public long diferenciaDias(Date fecha) {
         Date fechaActual = new Date();
         long diffEnMillis = fechaActual.getTime() - fecha.getTime();
