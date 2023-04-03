@@ -244,16 +244,12 @@ public class UsoPuntosResource {
 
         long dias_vencimiento = json.getInt("dias_vencimiento");
 
-        try {
-            List<BolsaPunto> puntos = bolsaDAO.puntosPorVencerByCliente().stream()
-                    .filter(punto -> dias_vencimiento == this.diferenciaDias(punto.getFechaCaducidadPunto()))
-                    .collect(Collectors.toList());
-        }
-        catch (Exception e){
+        List<BolsaPunto> puntos = bolsaDAO.puntosPorVencerByCliente().stream()
+                .filter(punto -> dias_vencimiento == this.diferenciaDias(punto.getFechaCaducidadPunto()))
+                .collect(Collectors.toList());
 
-        }
 
-        return bolsaDAO.puntosPorVencerByCliente();
+        return puntos;
     }
 
     @Path("/actualizar-fecha-caducidad")
