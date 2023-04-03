@@ -10,10 +10,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Path("/clientes")
 public class ClienteResource {
@@ -26,6 +23,7 @@ public class ClienteResource {
     @GET
     @Produces({ MediaType.APPLICATION_JSON})
     public List<Cliente> listar() {
+        System.out.print("HOLIIIIII");
         return clienteDAO.listarClientes();
     }
 
@@ -166,28 +164,36 @@ public class ClienteResource {
 
     @Path("/cliente-by-name")
     @GET
-    @Consumes( { MediaType.APPLICATION_JSON_PATCH_JSON})
+    @Consumes( { MediaType.APPLICATION_JSON})
     @Produces({ MediaType.APPLICATION_JSON})
-    public Response cliente_by_name(JsonObject json) {
-        Response.ResponseBuilder builder = null;
-        /*print to wildfly*/
-        try{
-            String nombre = json.getString("nombre");
-            System.out.println("nombre: " + nombre);
-            Cliente cliente = (Cliente) clienteDAO.listarClienteByName(nombre);
-            System.out.println("Cliente: " +  cliente);
-            if(cliente != null){
-                Map<String, String> responseObj = getResponse("OK", "200", "Cliente obtenido.", "");
-                builder = Response.status(Response.Status.OK).entity(responseObj);
-            } else{
-                Map<String, String> responseObj = getResponse("ERROR", "500", "No se encontró un cliente con ese nombre", "");
-                builder = Response.status(Response.Status.NOT_FOUND).entity(responseObj);
-            }
-        }catch (Exception e){
-            Map<String, String> responseObj = getResponse("ERROR", "500", "Error al eliminar el cliente"+e.getMessage(), "");
-            builder = Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(responseObj);
-        }
-        return builder.build();
+    public List<Cliente> cliente_by_name(JsonObject json) {
+        String nombre = json.getString("nombre");
+        System.out.println("nombre: " + nombre);
+
+        return  clienteDAO.listarClienteByName(nombre);
+    }
+
+
+    @Path("/cliente-by-apellido")
+    @GET
+    @Consumes( { MediaType.APPLICATION_JSON})
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List<Cliente> cliente_by_apellido(JsonObject json) {
+        String apellido = json.getString("apellido");
+        System.out.println("nombre: " + apellido);
+
+        return  clienteDAO.listarClienteByApellido(apellido);
+    }
+
+    @Path("/cliente-by-fecha-cumple")
+    @GET
+    @Consumes( { MediaType.APPLICATION_JSON})
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List<Cliente> cliente_by_fecha_cumple(JsonObject json) {
+        String fecha = json.getString("fecha");
+        System.out.println("fecha: " + fecha);
+
+        return  clienteDAO.listarClienteByFecha(fecha);
     }
 
     Map<String, String> getResponse(String status, String code, String msg, String data){
