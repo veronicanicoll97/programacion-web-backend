@@ -1,5 +1,6 @@
 package com.tp.tpback;
 
+import dao.BolsaPuntoDAO;
 import dao.ClienteDAO;
 import dao.PaisDAO;
 import model.Cliente;
@@ -17,7 +18,8 @@ public class ClienteResource {
 
     @Inject
     ClienteDAO clienteDAO;
-
+    @Inject
+    BolsaPuntoDAO bolsaDAO;
 
     @Path("/listar")
     @GET

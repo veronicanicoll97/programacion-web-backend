@@ -13,7 +13,8 @@
     <list default="true" id="33c325f7-c9fd-4022-8b07-419a7d0f8913" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ClienteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/ClienteResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tp/tpback/UsoPuntosResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BolsaPuntoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BolsaPuntoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,12 +60,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/web-backend-proy/programacion-web-backend/src/main/java/util",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15722656",
     "project.structure.side.proportion": "0.40603247",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -114,6 +118,7 @@
       <workItem from="1679685163139" duration="595000" />
       <workItem from="1680149012357" duration="3793000" />
       <workItem from="1680314757167" duration="13302000" />
+      <workItem from="1680521657189" duration="2207000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 @Path("/usopuntos")
 public class UsoPuntosResource {
@@ -233,7 +235,36 @@ public class UsoPuntosResource {
         return bolsaDAO.listarBolsaRangoPuntos(limiteInf,limiteSup);
     }
 
+    @Path("/puntos-por-vencer")
+    @GET
+    @Consumes({ MediaType.APPLICATION_JSON})
+    @Produces({ MediaType.APPLICATION_JSON})
+    public List listarPuntosPorVencerByCliente(JsonObject json) {
+        System.out.print("Dias: " + json.getInt("dias_vencimiento"));
 
+        long dias_vencimiento = json.getInt("dias_vencimiento");
+
+        try {
+            List<BolsaPunto> puntos = bolsaDAO.puntosPorVencerByCliente().stream()
+                    .filter(punto -> dias_vencimiento == this.diferenciaDias(punto.getFechaCaducidadPunto()))
+                    .collect(Collectors.toList());
+        }
+        catch (Exception e){
+
+        }
+
+        return bolsaDAO.puntosPorVencerByCliente();
+    }
+
+    public long diferenciaDias(Date fecha) {
+        Date fechaActual = new Date();
+        long diffEnMillis = fechaActual.getTime() - fecha.getTime();
+
+        long diffEnDias = TimeUnit.DAYS.convert(diffEnMillis, TimeUnit.MILLISECONDS);
+
+        return  diffEnDias;
+
+    }
 
     Map<String, String> getResponse(String status, String code, String msg, String data){
         Map<String, String> responseObj = new HashMap<>();

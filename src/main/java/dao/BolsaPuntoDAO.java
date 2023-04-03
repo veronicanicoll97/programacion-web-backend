@@ -76,4 +76,9 @@ public class BolsaPuntoDAO {
         return query.getResultList();
     }
 
+    public List<BolsaPunto> puntosPorVencerByCliente() {
+        Query query = entityManager.createQuery("SELECT p FROM BolsaPunto p WHERE p.saldoPuntos = 0");
+
+        return query.getResultList();
+    }
 }
